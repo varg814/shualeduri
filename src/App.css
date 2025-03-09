@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.nav-icon {
+  filter: none;
+}
+
+.nav-icon.active {
+  transition: filter 0.3s ease;
+  filter: brightness(0) invert(1);
+}
