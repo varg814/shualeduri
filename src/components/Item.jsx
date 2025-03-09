@@ -43,13 +43,11 @@ export default function Item({
               alt={`${title} thumbnail`}
               className="rounded-[8px] w-full h-full object-cover"
             />
-            <Button
-              style={{
-                backgroundImage: `url(${getBookmarkIcon(isBookmarked)})`,
-              }}
-              onClick={onClick}
-              className="w-[32px] h-[32px] absolute top-4 right-4 bg-[#10141E] opacity-50 bg-no-repeat bg-center rounded-[100%]"
-            />
+          <Button
+            style={{ backgroundImage: `url(${getBookmarkIcon(isBookmarked)})`,  backgroundColor: 'rgba(16, 20, 30, 0.5) '}}
+            onClick={onClick}
+            className="w-[32px] h-[32px] absolute top-4 right-6 bg-no-repeat bg-center rounded-[100%]"
+          />
           </div>
           <div className="flex gap-[10px] items-center">
             <p className="text-white font-outfit text-xs font-normal leading-normal tracking-normal ligatures-none opacity-75">
@@ -83,9 +81,9 @@ export default function Item({
           style={{ backgroundImage: `url(${src})` }}
         >
           <Button
-            style={{ backgroundImage: `url(${getBookmarkIcon(isBookmarked)})` }}
+            style={{ backgroundImage: `url(${getBookmarkIcon(isBookmarked)})`,  backgroundColor: 'rgba(16, 20, 30, 0.5) '}}
             onClick={onClick}
-            className="w-[32px] h-[32px] absolute top-4 right-6 bg-[#10141E] opacity-50 bg-no-repeat bg-center rounded-[100%]"
+            className="w-[32px] h-[32px] absolute top-4 right-6 bg-no-repeat bg-center rounded-[100%]"
           />
 
           <div className="flex gap-[10px] items-center">
@@ -118,38 +116,3 @@ export default function Item({
     </>
   );
 }
-
-// <div className="flex flex-col gap-[8px] w-full max-w-[280px]">
-//   <div class=" w-full max-w-[280px] max-h-[174px]">
-//     <img
-//       src={src}
-//       alt={`${title} thumbnail`}
-//       className="rounded-[8px] w-full h-full object-cover"
-//     />
-//   </div>
-//   <div className="flex gap-[10px] items-center">
-//     <p class="text-white font-outfit text-xs font-normal leading-normal tracking-normal ligatures-none opacity-75">
-//       {year}
-//     </p>
-//     <div className="h-[2px] w-[2px] rounded bg-[#fff] opacity-75"></div>
-//     <div className="flex items-center gap-[5px]">
-//       <img
-//         src={getCategoryIcon(category)}
-//         alt={`${category} icon`}
-//         className="w-[12px] h-[12px]"
-//       />
-//       <p class="text-white font-outfit text-xs font-normal leading-normal tracking-normal ligatures-none opacity-75">
-//         {category}
-//       </p>
-//     </div>
-//     <div className="h-[2px] w-[2px] rounded bg-[#fff] opacity-75"></div>
-//     <p class="text-white font-outfit text-xs font-normal leading-normal tracking-normal ligatures-none opacity-75">
-//       {rating}
-//     </p>
-//   </div>
-//   <div>
-//     <h1 class="text-white font-outfit text-lg font-normal leading-normal ligatures-none">
-//       {title}
-//     </h1>
-//   </div>
-// </div>

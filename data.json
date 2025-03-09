@@ -1,5 +1,24 @@
 [
   {
+    "title": "Once Upon a Time",
+    "thumbnail": {
+      "trending": {
+        "small": "./src/assets/thumbnails/ouat/trending/small.jpg",
+        "large": "./src/assets/thumbnails/ouat/trending/large.jpg"
+      },
+      "regular": {
+        "small": "./src/assets/thumbnails/ouat/regular/small.jpg",
+        "medium": "./src/assets/thumbnails/ouat/regular/medium.jpg",
+        "large": "./src/assets/thumbnails/ouat/regular/large.jpg"
+      }
+    },
+    "year": 2011,
+    "category": "TV Series",
+    "rating": "PG",
+    "isBookmarked": true,
+    "isTrending": true
+  },
+  {
     "title": "Beyond Earth",
     "thumbnail": {
       "trending": {

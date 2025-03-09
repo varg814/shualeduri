@@ -32,69 +32,65 @@ const Page = ({
   };
 
   return (
-    <>
-      {isTrending ? (
-        <div className="flex flex-col gap-[25px]">
-          <h1 className="text-white font-outfit text-2xl font-normal leading-normal tracking[-0.5px]">
-            {title}
-          </h1>
-          <Swiper
-            pagination={{
-              type: "fraction",
-            }}
-            modules={[Pagination, Navigation]}
-            className={className}
-            slidesPerView={slidesPerView}
-          >
-            {filteredData.map((item, index) => (
-              <SwiperSlide key={index} className="w-[300px]">
-                <Item
-                  src={
-                    item.isTrending
-                      ? item.thumbnail.trending.small
-                      : item.thumbnail.regular.small
-                  }
-                  year={item.year}
-                  category={item.category}
-                  rating={item.rating}
-                  title={item.title}
-                  isTrending={item.isTrending}
-                  onClick={() => handleBookmarkToggle(item)}
-                  isBookmarked={item.isBookmarked}
-                />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+    <div className="flex flex-col gap-[25px]">
+      <h1 className="text-white font-outfit text-2xl font-normal leading-normal tracking[-0.5px]">
+        {title}
+      </h1>
+      {filteredData.length === 0 ? (
+        <p className="text-white">Nothing to see here :/</p>
+      ) : isTrending ? (
+        <Swiper
+          pagination={{
+            type: "fraction",
+          }}
+          modules={[Pagination, Navigation]}
+          className={className}
+          slidesPerView={slidesPerView}
+        >
+          {filteredData.map((item, index) => (
+            <SwiperSlide
+              key={index}
+              style={{ width: "470px", marginRight: "40px" }}
+            >
+              <Item
+                src={
+                  item.isTrending
+                    ? item.thumbnail.trending.small
+                    : item.thumbnail.regular.small
+                }
+                year={item.year}
+                category={item.category}
+                rating={item.rating}
+                title={item.title}
+                isTrending={item.isTrending}
+                onClick={() => handleBookmarkToggle(item)}
+                isBookmarked={item.isBookmarked}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
       ) : (
-        <div className="flex flex-col gap-[25px]">
-          <h1 className="text-white font-outfit text-2xl font-normal leading-normal tracking[-0.5px]">
-            {title}
-          </h1>
-          <div className={className}>
-            {filteredData.map((item, index) => (
-              <>
-                <Item
-                  src={
-                    item.isTrending
-                      ? item.thumbnail.trending.small
-                      : item.thumbnail.regular.small
-                  }
-                  key={index}
-                  year={item.year}
-                  category={item.category}
-                  rating={item.rating}
-                  title={item.title}
-                  isTrending={item.isTrending}
-                  onClick={() => handleBookmarkToggle(item)}
-                  isBookmarked={item.isBookmarked}
-                />
-              </>
-            ))}
-          </div>
+        <div className={className}>
+          {filteredData.map((item, index) => (
+            <Item
+              src={
+                item.isTrending
+                  ? item.thumbnail.trending.small
+                  : item.thumbnail.regular.small
+              }
+              key={index}
+              year={item.year}
+              category={item.category}
+              rating={item.rating}
+              title={item.title}
+              isTrending={item.isTrending}
+              onClick={() => handleBookmarkToggle(item)}
+              isBookmarked={item.isBookmarked}
+            />
+          ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 
